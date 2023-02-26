@@ -1,0 +1,26 @@
+{
+  "name": "tune-dupe",
+  "version": "1.0.0",
+  "description": "A script to locate duplicate songs in your music library!",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "npx tsc",
+    "dev": "npx tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Offroaders123/Tune-Dupe.git"
+  },
+  "author": "Brandon Bennett <offroaders123@gmail.com> (https://github.com/Offroaders123)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Offroaders123/Tune-Dupe/issues"
+  },
+  "homepage": "https://github.com/Offroaders123/Tune-Dupe#readme",
+  "sideEffects": false,
+  "devDependencies": {
+    "@types/node": "^18.14.2"
+  }
+}
