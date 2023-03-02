@@ -1,9 +1,22 @@
-import * as fs from "node:fs/promises";
+import { readdir } from "node:fs/promises";
+import { resolve } from "node:path";
 import { createInterface } from "node:readline/promises";
+import fromAsync from "array-from-async";
 
-console.log(await readSongs("/Users/brandon/Music/Music/Media/Music/"));
+const files = await fromAsync(getFiles("/Users/brandon/Music/Music/Media/Music/"));
 
-export async function readSongs(path: string){
-  const songs = await fs.readdir(path,{ withFileTypes: true });
-  return songs;
+for (const file of files){
+  console.log(file);
+}
+
+export async function * getFiles(directory: string): AsyncGenerator<string,void,unknown> {
+  for (const entry of await readdir(directory,{ withFileTypes: true })){
+    const path = resolve(directory,entry.name);
+
+    if (entry.isDirectory()){
+      yield * getFiles(path);
+    } else {
+      yield path;
+    }
+  }
 }

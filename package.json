@@ -20,6 +20,9 @@
   },
   "homepage": "https://github.com/Offroaders123/Tune-Dupe#readme",
   "sideEffects": false,
+  "dependencies": {
+    "array-from-async": "^3.0.0"
+  },
   "devDependencies": {
     "@types/node": "^18.14.2"
   }
